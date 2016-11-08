@@ -649,6 +649,8 @@ textarea
 
 @media screen and (max-width: 767px) {
 
+    
+    
    .kolona.kartica
     {
         
@@ -687,6 +689,7 @@ textarea
     .wrapper
     {
         width:100%;
+        margin-top: 25px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -698,15 +701,16 @@ textarea
     }
     .fixed_nav
     {
-        height:20px;
+        height:18px;
     }
     .mobilni_nav
     {
-        height:20px;
+        height:18px;
     }
     .pozadina
     {
                 background-image: url(korpa200.png);
+        
 
     }
    
