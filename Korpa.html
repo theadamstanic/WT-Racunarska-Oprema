@@ -4,9 +4,30 @@
     <head>
         <title>wt spirala adam stanic</title>
     <link rel="stylesheet" href="stil.css">
-    <link rel="stylesheet" href="kontejneri.css">
-    <link rel="stylesheet" href="stil_korpa.css">
-    <script src="javasc.js"></script>
+            <link rel="stylesheet" href="kontejneri.css">
+        <link rel="stylesheet" href="stil_korpa.css">
+
+        <script src="carousel.js"></script>
+        <script src="provjeraformi.js"></script>
+        <script src="ajaxstranice.js"></script>
+        
+                <script src="fullscreen.js"></script>
+
+         <script>
+            document.onkeydown = function(evt)
+            {
+                evt = evt || window.event;
+                if(evt.keyCode==27)
+                    {
+                        fullscreenfunkcijaoff();
+                        
+                    }
+            }
+        </script>
+        
+        
+        
+        <meta name="viewport" content="width=device-width" />
     </head>
 
     <body>
@@ -44,25 +65,30 @@
         
         <div class="heder">
              <img class="logo"  src="logospirala.png">
-
+            
+            
             
             <div class="fixed_nav">
                     <div class="fixed_clan">
-                        <a href="index.html">Home</a>
+                       <p onclick="ucitajstranicu('index.html')">Home</p>
                 </div>  
                 
                     <div class="fixed_clan">
-                        <a href="Kontakt.html">Kontakt</a>
+                        <p 
+                           onclick="ucitajstranicu('Kontakt.html')">Kontakt</p>
                 </div> 
                 <div class="fixed_clan">
-                    <a href="Onama.html">O nama</a>
+                    <p 
+                       onclick="ucitajstranicu('Onama.html')">O nama</p>
                 </div>  
                 
                     <div class="fixed_clan">
-                        <a href="Korpa.html">Korpa</a>
+                        <p
+                           onclick="ucitajstranicu('Korpa.html')">Korpa</p>
                 </div>  
                 <div class="fixed_clan">
-                    <a href="Katalog.html">Katalog</a>
+                    <p 
+                       onclick="ucitajstranicu('Katalog.html')">Katalog</p>
                 </div>  
                 
                     
@@ -80,31 +106,31 @@
                     <div class="fixed_clan">
                         <a href="index.html">
                         
-                        <img src="http://www.watchseasonline.com/assets/watch-season-online-logo.png">
+                        <img src="http://www.watchseasonline.com/assets/watch-season-online-logo.png" onclick="ucitajstranicu('index.html')">
                         </a>
                 </div>  
                 
                     <div class="fixed_clan">
                         <a href="Kontakt.html">
-                        <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Phone.png">
+                        <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Phone.png" onclick="ucitajstranicu('Kontakt.html')">
                         </a>
                 </div> 
                 <div class="fixed_clan">
                     <a href="Onama.html">
-                    <img src="http://www.ncaknights.com/wp-content/uploads/2012/05/parent_icon.png">
+                    <img src="http://www.ncaknights.com/wp-content/uploads/2012/05/parent_icon.png" onclick="ucitajstranicu('Onama.html')">
                     
                     </a>
                 </div>  
                 
                     <div class="fixed_clan">
                         <a href="Korpa.html">
-                        <img src="http://www.infinitehs.com/images/cart1.png">
+                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.html')">
                         
                         </a>
                 </div>  
                 <div class="fixed_clan">
                     <a href="Katalog.html">
-                    <img src="katalog-ikona.png">
+                    <img src="http://www.freeiconspng.com/uploads/catalog-icon-7.png" onclick="ucitajstranicu('Katalog.html')">
                     
                     </a>
                 </div>  
@@ -118,8 +144,10 @@
         </div>
             
             
+            
         </div>
          
+        <div id="okvir">
 <div class="ram">
     
     <!--<div class="red" style="text-align:center;position:relative;">
@@ -138,6 +166,8 @@
     </div>
     -->
     
+    
+    
     <div class="pozadina">
     
             <h1>Vaša korpa sadrži</h1>
@@ -150,6 +180,7 @@
         
     </div>
 </div>   
+        </div>
 
         
         
@@ -178,10 +209,11 @@ function myMap() {
 }
 </script>
             
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp3F0b-eSNy3mMe7l397Xjo55p7xL0ugw
+&callback=myMap"></script>
             
             <div class="tekst_footer">
-            Kontakt telefon: taj i taj
+            Kontakt telefon: 061 133 052
             </div>
             
         </footer>
