@@ -16,6 +16,12 @@
     display: none;
 }
 
+#posaljiPoruku
+{
+	width:30%;
+	height:auto;
+}
+
 #nazad_katalog
 {
 	width:20%;
