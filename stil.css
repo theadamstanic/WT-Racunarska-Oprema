@@ -11,7 +11,7 @@
     color:red;
 }
 
-#ime_input_error,#prezime_input_error,#username_input_error,#password_input_error,#email_input_error,#naziv_input_error,#cijena_input_error,#link_input_error,#admin_input_korisnik_error,#admin_input_artikal_error,#ime_kontakt_error,#prezime_kontakt_error,#poruka_kontakt_error,#cijena_min_error,#cijena_max_error,#username_sign_up_error,#ime_sign_up_error,#prezime_sign_up_error,#email_sign_up_error,#password_sign_up_error,#username_sign_in_error,#password_sign_in_error
+#ime_input_error,#zauzet_error,#prezime_input_error,#username_input_error,#password_input_error,#email_input_error,#naziv_input_error,#cijena_input_error,#link_input_error,#admin_input_korisnik_error,#admin_input_artikal_error,#ime_kontakt_error,#prezime_kontakt_error,#poruka_kontakt_error,#cijena_min_error,#cijena_max_error,#username_sign_up_error,#ime_sign_up_error,#prezime_sign_up_error,#email_sign_up_error,#password_sign_up_error,#username_sign_in_error,#password_sign_in_error
 {
     display: none;
 }
@@ -41,10 +41,15 @@
 {
 	display:none;
 }
-
+#korpica
+{
+	margin:0 auto;
+	width:100%;
+	text-align:center;
+}
 #admin_tools
 {
-	display:none;    background-color: rgb(238,238,238);color:rgb(37,37,37);
+	  background-color: rgb(238,238,238);color:rgb(37,37,37);
 }
 
 .forma_container
@@ -52,7 +57,14 @@
 	margin:0 auto;height:100%;width:50%;
 }
 
-#csvbutton,#admin_pretrazi,#pdfbutton,#dodajKorisnika,#dodajArtikal
+#pdfbutton
+{
+	width:auto;
+	height:auto;
+	font-size:1vw;
+}
+
+#csvbutton,#admin_pretrazi,#dodajKorisnika,#dodajArtikal
 {
 	width:20%;text-align:center;height:auto;
 	font-size:1.2vw;

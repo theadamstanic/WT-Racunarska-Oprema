@@ -20,8 +20,6 @@ foreach($xml->children() as $artikal)
 }
 
 
-header('Content-Type: application/excel');
-header('Content-Disposition: attachment; filename="CSVFile.csv"');
 
 
 $fp = fopen('CSVFile.csv', 'w');
@@ -33,5 +31,9 @@ foreach ( $data as $line ) {
 }
 fclose($fp);
 
-
+$contenttype = "application/force-download";
+        header("Content-Type: " . $contenttype);
+        header("Content-Disposition: attachment; filename=\"" . basename('CSVFile.csv') . "\";");
+        readfile('CSVFile.csv');
+        exit();
 ?>

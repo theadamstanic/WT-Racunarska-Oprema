@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -84,7 +88,7 @@
                 
                     <div class="fixed_clan">
                         <p
-                           onclick="ucitajstranicu('Korpa.html')">Korpa</p>
+                           onclick="ucitajstranicu('Korpa.php')">Korpa</p>
                 </div>  
                 <div class="fixed_clan">
                     <p 
@@ -123,8 +127,8 @@
                 </div>  
                 
                     <div class="fixed_clan">
-                        <a href="Korpa.html">
-                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.html')">
+                        <a href="Korpa.php">
+                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.php')">
                         
                         </a>
                 </div>  
@@ -168,15 +172,37 @@
     
     
     
-    <div class="pozadina">
+    <div class="kolona cetri" id="korpica">
     
             <h1>Vaša korpa sadrži</h1>
-            <ul >
+			<h2>Klik na element da ga se izbrise</h2>
+            <?php 
+			$string="";
+			
+			if(count($_SESSION["korpa"])  > 0 )
+			{
+					$string = "<ul >";
+				foreach ($_SESSION["korpa"] as $element)
+				{
+		$string=$string . "<li onclick='izbaciIzKorpe(" . "\"" . $element . "\"" . ")'>" .$element .   "</li>";
+				}
+				$string=$string."</ul>";
+			}
+			else
+			{
+				$string="Vasa korpa je prazna";
+			}
+			
+			echo $string;
+
+			/*<ul >
             <li>artikal 1</li>
                 <li>artikal 2</li>
                 <li>artikal 3</li>
                 <li>artikal 4</li>
-            </ul>
+            </ul> */
+			
+			?>
         
     </div>
 </div>   

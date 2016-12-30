@@ -59,7 +59,7 @@
                 
                     <div class="fixed_clan">
                         <p
-                           onclick="ucitajstranicu('Korpa.html')">Korpa</p>
+                           onclick="ucitajstranicu('Korpa.php')">Korpa</p>
                 </div>  
                 <div class="fixed_clan">
                     <p 
@@ -98,8 +98,8 @@
                 </div>  
                 
                     <div class="fixed_clan">
-                        <a href="Korpa.html">
-                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.html')">
+                        <a href="Korpa.php">
+                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.php')">
                         
                         </a>
                 </div>  
@@ -168,7 +168,7 @@
                                 Poruka ne smije sadrzati manje od 10 karaktera
                             </div>
                 
-                <input type="submit" value="Posalji" onclick="validirajformu(this)">
+                <input type="submit" value="Posalji" id="posaljiPoruku" onclick="validirajformu(this)">
                 
             </form>
             

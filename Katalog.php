@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -59,7 +63,7 @@
                 
                     <div class="fixed_clan">
                         <p
-                           onclick="ucitajstranicu('Korpa.html')">Korpa</p>
+                           onclick="ucitajstranicu('Korpa.php')">Korpa</p>
                 </div>  
                 <div class="fixed_clan">
                     <p 
@@ -98,8 +102,8 @@
                 </div>  
                 
                     <div class="fixed_clan">
-                        <a href="Korpa.html">
-                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.html')">
+                        <a href="Korpa.php">
+                        <img src="http://www.infinitehs.com/images/cart1.png" onclick="ucitajstranicu('Korpa.php')">
                         
                         </a>
                 </div>  
@@ -205,7 +209,7 @@
                     Asus nVidia GeForce GT710 
                           
                             </p>
-                            <p class="cijena" id="cijena 1">
+                            <p class="cijena" id="cijena 1" >
                             215,00 KM
                             </p>
                             

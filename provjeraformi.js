@@ -40,6 +40,8 @@ function ucitajstranicu(string)
                             document.getElementById("okvir").innerHTML=izbaciheader(htxp.responseText);
 							if(string=="Katalog.php")
 								napuni_katalog();
+							if(string=="Korpa.php")
+								napuni_korpu();
 							//if(string=="index.php")
 							//provjeri_login("index");
 						
@@ -58,7 +60,7 @@ function ucitajstranicu(string)
 
 
 
-function indexlogin(istina,tip)
+/*function indexlogin(istina,tip)
 {
 	
 	
@@ -108,7 +110,7 @@ function indexlogin(istina,tip)
 function provjeri_login(referenca)
 {
 		ucitajstranicu("index.php");
-setTimeout(provjeri_login2(referenca), 1000);
+setTimeout(provjeri_login2(referenca), 2000);
 
 }
 
@@ -146,7 +148,7 @@ function provjeri_login2(referenca)
 	x.open("GET","provjeraLogIn.php?q=" + "lmao",true);
 
 	x.send();
-}
+}*/
 
 function provjeriusername(string)
 {
@@ -239,9 +241,10 @@ function logout()
 		if(this.readyState==4 && this.status==200)
 		{
 			//document.getElementById("okvir").innerHTML="<br><br><br><br><br><h1> Hvala Vam na poruci</h1>";
-			document.getElementById("account_management").style.display="none";
-			document.getElementById("sakrij").style.display="block";
-			indexlogin(false);
+			//document.getElementById("account_management").style.display="none";
+			//document.getElementById("sakrij").style.display="block";
+			//indexlogin(false);
+			ucitajstranicu("index.php");
 			
 			}
 		
@@ -277,12 +280,12 @@ function login(us,pass)
 								document.getElementById("password_sign_in_error").style.display="none";
 
 				//document.getElementById("username").innerHTML="Admin: " + username;
-				document.getElementById("sakrij").style.display="none";
+				/*document.getElementById("sakrij").style.display="none";
 				document.getElementById("account_management").style.display="block";
 				document.getElementById("admin_tools").style.display="block";
 						document.getElementById("prijedlozi").style.display="block";
-
-						
+*/
+						ucitajstranicu("index.php");
 						
 	
 			}
@@ -292,8 +295,9 @@ function login(us,pass)
 								document.getElementById("password_sign_in_error").style.display="none";
 
 				//document.getElementById("username").innerHTML="Obicni korisnik: " + username;
-				document.getElementById("sakrij").style.display="none";
-					document.getElementById("account_management").style.display="block";
+				/////////document.getElementById("sakrij").style.display="none";
+					///////////document.getElementById("account_management").style.display="block";
+						ucitajstranicu("index.php");
 
 
 			}
@@ -328,6 +332,8 @@ function signup()
     password=document.getElementById("password_sign_up").value;
     email=document.getElementById("email_sign_up").value;
 	tip="obicni";
+					document.getElementById("zauzet_error").style.display="none";
+
 	
 	if(document.getElementById("admin_sign_up").checked)
 		tip="admin";
@@ -342,6 +348,7 @@ function signup()
 			if(this.responseText=="zauzet")
 			{
 				/////
+				document.getElementById("zauzet_error").style.display="block";
 			}
 			else if(this.responseText=="true")
 			{

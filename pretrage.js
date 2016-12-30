@@ -59,14 +59,18 @@ function pomocna_prikazi(rezultat)
 
 	}
 
+	
 
 	for(i=0;i<imena.length;i++)
 	{
+		
+		var ssss = "onclick='uKorpu(\" " + ids[i] + " \") ' " ;
+		
 		string+="<div class='kolona kartica'  >" + 
 		"<div class = 'ikona_div' > " + "<img class='ikona' src = ' " + ikone[i] + " ' onclick='fullscreenfunkcijaon(this) ' >" +
 		"</div> <div></div> <p class = 'naziv' > " + imena[i] + "</p>" +
 		"<p class = 'cijena' > " + cijene[i] + "</p>" +
-		"<div class= 'korpa_div'> u korpu </div>  </div> </div>" 
+		"<div class= 'korpa_div' " + ssss + "> u korpu </div>  </div> </div>" 
 	}
 	
 	document.getElementById("artikli_kataloga").innerHTML=string;
@@ -74,6 +78,39 @@ function pomocna_prikazi(rezultat)
 
 
 
+}
+
+function napuni_korpu()
+{
+	/*var x = new XMLHttpRequest();
+	x.onreadystatechange = function()
+	{
+		if(this.readyState==4 && this.status==200)
+		{
+			alert("dodan");
+	
+		}
+	};
+
+	x.open("GET","procitajKorpa.php?q=" + ref,true);
+
+	x.send();*/
+}
+
+function uKorpu(ref)
+{
+	var x = new XMLHttpRequest();
+	x.onreadystatechange = function()
+	{
+		if(this.readyState==4 && this.status==200)
+		{
+	
+		}
+	};
+
+	x.open("GET","dodajKorpa.php?q=" + ref,true);
+
+	x.send();
 }
 
 function pomocna_pretrazi(query)
@@ -416,6 +453,28 @@ function prikazi_artikle(rezultat)
 	
 
 		//alert(string_admin);
+	}
+	
+	function izbaciIzKorpe(ref)
+	{
+		
+		var ref2 = ref.substr(0, ref.indexOf(" "));
+		var x = new XMLHttpRequest();
+	x.onreadystatechange = function()
+	{
+		if(this.readyState==4 && this.status==200)
+		{
+
+			
+					ucitajstranicu("Korpa.php");
+			
+
+		}
+	};
+
+	x.open("GET","izbaciKorpa.php?q=" + ref2,true);
+
+	x.send();
 	}
 
 function vratiArtikle() {

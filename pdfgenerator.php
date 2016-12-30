@@ -64,4 +64,9 @@ for ($i=0; $i<count($ids); $i++)
 $pdffajl->Output('pdffajl.pdf', 'F');
 
 
+$contenttype = "application/force-download";
+        header("Content-Type: " . $contenttype);
+        header("Content-Disposition: attachment; filename=\"" . basename('pdffajl.pdf') . "\";");
+        readfile('pdffajl.pdf');
+        exit();
 ?>

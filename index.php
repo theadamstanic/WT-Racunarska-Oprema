@@ -2,7 +2,6 @@
 session_start();
 
 
-
 if(isset($_POST["ime_kontakt"]) && isset($_POST["prezime_kontakt"]) && isset($_POST["poruka_kontakt"]) )
 {
 
@@ -96,7 +95,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
     
     
     
-    <body onload="napuni_carousel();provjeri_login_boot('index')">
+    <body onload="napuni_carousel();"><!--provjeri_login_boot('index')">-->
          
           
      <!--   
@@ -131,7 +130,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
             
             <div class="fixed_nav">
                     <div class="fixed_clan">
-                       <p onclick="provjeri_login('index')">Home</p>
+                       <p onclick="ucitajstranicu('index.php')">Home</p>
                 </div>  
                 
                     <div class="fixed_clan">
@@ -145,7 +144,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
                 
                     <div class="fixed_clan">
                         <p
-                           onclick="ucitajstranicu('Korpa.html')">Korpa</p>
+                           onclick="ucitajstranicu('Korpa.php')">Korpa</p>
                 </div>  
                 <div class="fixed_clan">
                     <p 
@@ -166,7 +165,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
                     <div class="fixed_clan">
                       
                         
-                        <img src="http://www.watchseasonline.com/assets/watch-season-online-logo.png" onclick="ucitajstranicu('index.php');provjeri_login('index')">
+                        <img src="http://www.watchseasonline.com/assets/watch-season-online-logo.png" onclick="ucitajstranicu('index.php')"><!--;provjeri_login('index')">-->
                         
                 </div>  
                 
@@ -179,7 +178,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
                 </div>  
                 
                     <div class="fixed_clan">
-                        <img src=".\slike\cart1.png" onclick="ucitajstranicu('Korpa.html')">
+                        <img src=".\slike\cart1.png" onclick="ucitajstranicu('Korpa.php')">
                         
                 </div>  
                 <div class="fixed_clan">
@@ -214,6 +213,9 @@ header('Location:'.$_SERVER['PHP_SELF']);
 		
             <div class="red">
 			
+			
+			            <?php if(isset($_SESSION['tip']) && $_SESSION['tip'] == "admin") { ?>
+
 			<div class="kolona cetri" >
 			
 			<div class="kolona tri" id="trii" >
@@ -251,11 +253,15 @@ header('Location:'.$_SERVER['PHP_SELF']);
 	  
 	  
 	  
-	  <input type="button" id="csvbutton" value="Generate CSV" onclick="generateCSV()" >
-	  	  <input type="button" id="pdfbutton" value="Generate PDF" onclick="generatePDF()" >
-
 	  </form>
 
+	  <form action="csvgenerator.php">
+	  
+	  <input type="submit" id="csvbutton" value="Generate CSV" >
+	  	  
+</form>
+
+	  
 			</div>
 	  
 	  
@@ -317,6 +323,10 @@ header('Location:'.$_SERVER['PHP_SELF']);
 		
 		
 		</div>
+		
+		<?php }?>
+		
+		
 
                 <div class="kolona tri">
 
@@ -559,23 +569,33 @@ Bazirana na GTX 770 dizajnu uz "custom" soluciju hlađenja, nova GTX 770 Phantom
                         
                     </div>
                     </div>
+					
+					<form action="pdfgenerator.php">
+<input type="submit" id="pdfbutton" value="Generate PDF"  >
+</form>
                 </div>
                 
 				
-				<div class="kolona jedan" id="account_management" style="display:none">
+				
+				<?php if(isset($_SESSION["username"]) && $_SESSION["username"]!="none") {?>
+				<div class="kolona jedan" id="account_management" style="display:block">
 				
 				<h1 id="dobrodosli">
 				Dobrodosli
 				</h1>
-				<!--<h2 id="username" >--><?php /*if(isset($_SESSION["tip"]) && $_SESSION["tip"]!="none" ) {print $_SESSION["tip"]." ".$_SESSION['username'];}*/?>
-				<!--</h2>-->
+				
 				<input type="button" value="Log out" onclick="logout()";>
 				</div>
-				
+				<?php }?>
                 
 				
-                
-                <div class="kolona jedan" id="sakrij">
+                		
+
+					<?php if(!isset($_SESSION["username"]) || $_SESSION["username"]=="none" )
+						{?>
+				 
+				
+                <div class="kolona jedan" id="sakrij" style="display:block">
                     
                     
                     
@@ -684,7 +704,9 @@ Bazirana na GTX 770 dizajnu uz "custom" soluciju hlađenja, nova GTX 770 Phantom
 						
                         <div>
                         <input type="button" value="Sign Up" onclick="validirajformu('Sign up')">
-                               
+                               <div class="error_poruka" id="zauzet_error">
+							   Taj email ili username je zauzet
+							   </div>
                                
                             
                         </div>
@@ -694,11 +716,15 @@ Bazirana na GTX 770 dizajnu uz "custom" soluciju hlađenja, nova GTX 770 Phantom
                     </form>
             
         </div>
+		
         
                 
+				<?php }?>
+				
+				<!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa-->
                 
-              <!--  <div class="kolona jedan">
-        <div class="sidebar">
+                <div class="kolona jedan">
+       <!-- <div class="sidebar">
           <div class="sidebar_top">&nbsp;</div>
           <div class="sidebar_item">
             <h3>Posljednje Novosti</h3>
@@ -707,10 +733,10 @@ Bazirana na GTX 770 dizajnu uz "custom" soluciju hlađenja, nova GTX 770 Phantom
             <p>DobrodoÅ¡li na naÅ¡u novu stranicu. VaÅ¡i dojmovi su nam bitni, stoga ukoliko imate savjete, Å¾albe ili pohvale piÅ¡ite nam<br /></p>
           </div>
           <div class="sidebar_base">&nbsp;</div>
-        </div>
-        
+        </div>-->
        
-      </div>-->
+       
+      </div>
                 
                 </div>
                 
