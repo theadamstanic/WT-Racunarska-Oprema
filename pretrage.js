@@ -458,7 +458,7 @@ function prikazi_artikle(rezultat)
 	function izbaciIzKorpe(ref)
 	{
 		//var ref2 = ref.substr(0, ref.indexOf(" "));
-		alert(ref);
+		//alert(ref);
 		var x = new XMLHttpRequest();
 	x.onreadystatechange = function()
 	{
