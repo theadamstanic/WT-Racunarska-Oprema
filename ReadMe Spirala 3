@@ -1,3 +1,5 @@
+Prije svega da napomenem da ne bi bilo lose pri pregledanju zakomentarisati skriptu u footeru za prikaz google mape, jer iz nekog razloga 
+kod mene se vrlo sporo ucitava iz nekog razloga.
 
 1)Napravljena je serijalizacija artikala i korisnika u artikli.xml i korisnici.xml fajlove
 Takodjer je moguce, ukoliko postoji potreba za time, da admin u nekon trenutku vrati sve podatke o 
