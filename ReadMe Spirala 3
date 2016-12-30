@@ -17,8 +17,10 @@ koje oni unose putem Kontakt.php podstranice. s tim sto se taj csv fajl ne downl
 3) Koristena je fpdf biblioteka, i odlucio sam se za generisanje izvjestaja o korisnicima sajta, a ne artiklima
 da ne bih fakticki radio istu stvar kao u drugom zadatku.
 
-4) Pretraga sa prijedlozima je omogucena adminu pri pretrazi artikala po nazivu, ili pri pretrazi
-korisnika po imenu ili prezimenu, kao sto je specificirano u postavci spirale.
+4) Pretraga sa prijedlozima je omogucena adminu pri pretrazi artikala po nazivu. Pri unosu karaktera u admin search 
+ukoliko se ijedno slovo odnosno string poklapa sa imenom odnosno prezimenom nekog od korisnika, oni se prikazuju u prijedlozima,
+kao sto je specificirano u postavci spirale. Pretraga samih korisnika se vrsi prema username,ali je moguca i pretraga po imenu i prezimenu
+pri cemu se pisu u formatu "Ime(space)prezime" ili "Ad Stanic"
 Takodjer postoje i prijedlozi pri pretrazi kataloga, sto vide svi korisnici (logovani ili ne logovani)
 
 5) deployana stranica se moze naci na http://wtspiralaphp-wt-spirala33.44fs.preview.openshiftapps.com/
