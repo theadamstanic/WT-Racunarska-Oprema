@@ -457,8 +457,8 @@ function prikazi_artikle(rezultat)
 	
 	function izbaciIzKorpe(ref)
 	{
-		
-		var ref2 = ref.substr(0, ref.indexOf(" "));
+		//var ref2 = ref.substr(0, ref.indexOf(" "));
+		alert(ref);
 		var x = new XMLHttpRequest();
 	x.onreadystatechange = function()
 	{
@@ -472,7 +472,7 @@ function prikazi_artikle(rezultat)
 		}
 	};
 
-	x.open("GET","izbaciKorpa.php?q=" + ref2,true);
+	x.open("GET","izbaciKorpa.php?q=" + ref,true);
 
 	x.send();
 	}

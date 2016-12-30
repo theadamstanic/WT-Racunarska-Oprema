@@ -179,17 +179,20 @@ session_start();
             <?php 
 			$string="";
 			
-			if(count($_SESSION["korpa"])  > 0 )
+			if( isset($_SESSION["korpa"]) && count($_SESSION["korpa"])  > 0 )
 			{
 					$string = "<ul >";
+					$brojac=0;
 				foreach ($_SESSION["korpa"] as $element)
 				{
-		$string=$string . "<li onclick='izbaciIzKorpe(" . "\"" . $element . "\"" . ")'>" .$element .   "</li>";
+		$string=$string . "<li onclick='izbaciIzKorpe(" . "\"" . $brojac . "\"" . ")'>" .$element .   "</li>";
+				$brojac++;
 				}
 				$string=$string."</ul>";
 			}
 			else
 			{
+				$_SESSION["korpa"]=array();
 				$string="Vasa korpa je prazna";
 			}
 			

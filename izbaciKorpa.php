@@ -3,7 +3,7 @@ session_start();
 $q = $_REQUEST["q"];
 $brojac=0;
 $index=-1;
-$ende= false;
+$ende= false;/*
 foreach ($_SESSION["korpa"] as $element)
 {
 	
@@ -22,8 +22,9 @@ foreach ($_SESSION["korpa"] as $element)
 	
 	}
 }
-
+*/
 $niz = array();
+$q=(int)$q;
 
 foreach ($_SESSION["korpa"] as $element)
 {
@@ -33,7 +34,7 @@ $_SESSION["korpa"]=array();
 
 for($i=0;$i<count($niz);$i++)
 {
-	if($i==$index) 
+	if($i==$q) 
 	{
 		continue;
 	}

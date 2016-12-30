@@ -138,19 +138,8 @@ session_start();
                 <div class="kolona jedan">
                 
             <div class="kontejner_meni">
-                <p>Kategorija</p>
-                <div class="linija"></div>
-                    <ul style="list-style-type:none;">
-                    <li id="procesori">
-                        Procesori
-                        </li>
-                    <li>
-                        Graficke
-                        </li>
-                    <li>
-                        Maticne
-                        </li>
-                    </ul>
+                <h1>Pretraga</h1>
+                
             </div>
                 
                     <div class="kontejner_filter">
