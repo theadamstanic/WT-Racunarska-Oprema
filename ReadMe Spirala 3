@@ -1,5 +1,6 @@
 Prije svega da napomenem da ne bi bilo lose pri pregledanju zakomentarisati skriptu u footeru za prikaz google mape, jer iz nekog razloga 
 kod mene se vrlo sporo ucitava iz nekog razloga.
+Preporucujem Logovanje kao glavni admin sa username Adam   i password aaaaa1
 
 1)Napravljena je serijalizacija artikala i korisnika u artikli.xml i korisnici.xml fajlove
 Takodjer je moguce, ukoliko postoji potreba za time, da admin u nekon trenutku vrati sve podatke o 
@@ -20,5 +21,5 @@ da ne bih fakticki radio istu stvar kao u drugom zadatku.
 korisnika po imenu ili prezimenu, kao sto je specificirano u postavci spirale.
 Takodjer postoje i prijedlozi pri pretrazi kataloga, sto vide svi korisnici (logovani ili ne logovani)
 
-5) deployana stranica se moze naci na http://wtspiralaphp-wt-spirala31.44fs.preview.openshiftapps.com/
+5) deployana stranica se moze naci na http://wtspiralaphp-wt-spirala33.44fs.preview.openshiftapps.com/
 Account mi istice 18 januara tako da se nadam da ce se stici pregledati spirala 3 i spirala 4 :)
