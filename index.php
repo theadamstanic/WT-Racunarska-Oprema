@@ -224,7 +224,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
 			<div  id="admin_tools" >
 		
 			<h1 onclick="prikazi_upute()">Admin toolbox <span style="font-size:60%">klik za upute za admine</span></h1>
-			<h2 id="upute" >Pretraga korisnika se vrsi po username, pretraga artikala po nazivu. Klikom na svaki od podataka koji se prikazu pretragom moguca je njihova izmjena</h2>
+			<h2 id="upute" >Pretraga korisnika se vrsi po username, pretraga artikala po nazivu. Klikom na svaki od podataka koji se prikazu pretragom moguca je njihova izmjena. Klikom na mali X pored korisnika odnosno artikla se on brise</h2>
 			
 		
 		
@@ -295,7 +295,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
 	  Naziv<br><input type="text" id="naziv_input"><br>	  <div class="error_poruka" id="naziv_input_error">naziv moze sadrzavati samo obicne karatkere i mora biti duze od 3 karaktera</div>
 
 	  Cijena<br><input type="text" id="cijena_input"><br><div class="error_poruka" id="cijena_input_error">cijena mora biti u formatu cijelih brojeva</div>
-	  Link ikone<br><input type="text" id="link_input"><div class="error_poruka" id="link_input_error">neispravan URL</div>
+	  URL ikone<br><input type="text" id="link_input"><div class="error_poruka" id="link_input_error">neispravan URL, slika treba biti .jpg, .jpeg ili.gif </div>
 	  
 <br>
 	  

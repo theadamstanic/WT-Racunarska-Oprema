@@ -895,10 +895,13 @@ function provjericijenu(str)
 
 function provjerilink(str)
 {
-	if(str.length>6)
+	
+	
+	if(str.length<6) return false;
+	
+	if( /\.(gif|jpg|jpeg|tiff|png)$/i.test(str) && str.length>5)
 		return true;
-	else
-		return false;
+	
 }
 
 function toggleDisplay(ref)
