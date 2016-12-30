@@ -502,14 +502,14 @@ VGA GIGABYTE AMD GV-R724OC-2GI 2.1
 			
 			<div class="donji_nav">
 			
-				<div class="forma_container" >
+				<!--<div class="forma_container" >
 				
 				<form>
 	<input type="text" id="inputlivesearch" size="30" onkeyup="showResult(this.value)"  >
 	<input type="button" onclick="pretrazi_katalog()" value="Pretrazi" style="float:left"> 
-	<div id="livesearch" "></div>
+	<div id="livesearch" ></div>
 	</form>
-				</div>
+				</div>-->
 				
 			</div>
 			<div class="hintovi" id="show_hints">

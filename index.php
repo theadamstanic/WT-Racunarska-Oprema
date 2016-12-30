@@ -765,7 +765,7 @@ Bazirana na GTX 770 dizajnu uz "custom" soluciju hlađenja, nova GTX 770 Phantom
             </div>
             <div id="map" class="mapa_footer" ></div>
             
-          <!--<script>
+          <script>
 function myMap() {
   var mapCanvas = document.getElementById("map");
   var mapOptions = {
@@ -785,7 +785,7 @@ function myMap() {
 </script>
             
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp3F0b-eSNy3mMe7l397Xjo55p7xL0ugw
-&callback=myMap"></script>-->
+&callback=myMap"></script>
             <div class="tekst_footer">
             Kontakt telefon: 061 133 952
             </div>
