@@ -174,38 +174,9 @@ session_start();
     
     <div class="kolona cetri" id="korpica">
     
-            <h1>Vaša korpa sadrži</h1>
-			<h2>Klik na element da ga se izbrise</h2>
-            <?php 
-			$string="";
-			
-			if( isset($_SESSION["korpa"]) && count($_SESSION["korpa"])  > 0 )
-			{
-					$string = "<ul >";
-					$brojac=0;
-				foreach ($_SESSION["korpa"] as $element)
-				{
-		$string=$string . "<li onclick='izbaciIzKorpe(" . "\"" . $brojac . "\"" . ")'>" .$element .   "</li>";
-				$brojac++;
-				}
-				$string=$string."</ul>";
-			}
-			else
-			{
-				$_SESSION["korpa"]=array();
-				$string="Vasa korpa je prazna";
-			}
-			
-			echo $string;
-
-			/*<ul >
-            <li>artikal 1</li>
-                <li>artikal 2</li>
-                <li>artikal 3</li>
-                <li>artikal 4</li>
-            </ul> */
-			
-			?>
+            <h1>Vaša korpa dolazi uskoro</h1>
+			<!--<h2>Klik na element da ga se izbrise</h2>-->
+            
         
 		
 		<br><br><br><br><br>
