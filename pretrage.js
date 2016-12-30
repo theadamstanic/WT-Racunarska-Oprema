@@ -925,7 +925,7 @@ function dodajArtikal()
 		document.getElementById("cijena_input_error").style.display="block";
 	else
 		document.getElementById("cijena_input_error").style.display="none";
-	if(!provjerilink(naziv))
+	if(!provjerilink(link))
 		document.getElementById("link_input_error").style.display="block";
 	else
 		document.getElementById("link_input_error").style.display="none";
