@@ -1,4 +1,4 @@
-Izvröena je migracija pristupa podacima sa xml na bazu.
+Izvr≈°ena je migracija pristupa podacima sa xml na bazu.
 Jedino sam ostavio da se prilikom log-ina ukoliko baza ne postoji provjere log in podaci iz xml fajla.
 Razlog jeste da, za slucaj da asistent ili profesorica iz nekog razloga ne mogu pokrenuti moju bazu na racunaru,
 ipak budu u mogucnosti pristupiti admin panelu i koristiti stranicu. Takodjer sam iz istog razloga ostavio u admin panelu
@@ -16,4 +16,4 @@ porucen taj artikal.
 Rest servis je odradjen slicno kao servis koji smo imali na rma kod spotify. Kao query se salje string,
 te se u bazi podataka traze artikli ciji naziv odgovara unesenom stringu. Pri tome je moguce da se string samo djelimicno
 slaze sa nazivom artikla i on ce biti prikazan. Tako na primjer ako se unese kao query "aziv" kao rezultat ce se vratiti
-artikal koji se zove "naziv1" odnosno "naziv2" i slicno. Za ovaj servis je odgovoran servisStranica.php fajl.
+artikal koji se zove "naziv1" odnosno "naziv2" i slicno. Za ovaj servis je odgovoran servisStranica.php fajl. Takodjer ako se posalje prazan string kao query kao rezultat se vracaju svi artikli
