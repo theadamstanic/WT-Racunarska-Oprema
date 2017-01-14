@@ -20,13 +20,13 @@ function napuniimena()
 	array_push($imena,"Asus nVidia GeForce GT710");
 	array_push($imena,"Asus nVidia GeForce GT730");
 	array_push($imena,"Gigabyte nVidia GeForce GT730");
-	array_push($imena,"Gigabyte nVidia GeForce GT730");
+	array_push($imena,"Gigabyte nVidia GeForce GT740");
 	array_push($imena,"Asus AMD Radeon Strix");
 	array_push($imena,"Asus Strix AMD Radeon");
-	array_push($imena,"naziv");
-	array_push($imena,"naziv");
-	array_push($imena,"naziv");
-	array_push($imena,"naziv");
+	array_push($imena,"naziv1");
+	array_push($imena,"naziv2");
+	array_push($imena,"naziv3");
+	array_push($imena,"naziv4");
 	array_push($imena,"VGA GIGABYTE nVIDIA GV-N210SL-1GI");
 	array_push($imena,"VGA GIGABYTE AMD GV-R724OC-2GI 2.1");
    

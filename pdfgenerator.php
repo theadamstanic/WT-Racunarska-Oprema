@@ -27,7 +27,35 @@ $emails=array();
 $tipovi=array();
 
 
+$dbhost = $_SERVER["HTTP_HOST"];
+$dbuser = 'spirala';
+$dbpass = 'password';
+$conn = ($GLOBALS["___mysqli_ston"] = mysqli_connect($dbhost,  $dbuser,  $dbpass));
+if(! $conn ) {
+die('Could not connect: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+}
+ mysqli_select_db($GLOBALS["___mysqli_ston"], 'adamstanicspirala_db');
 
+ 
+ $sql = 'SELECT id,username,ime,prezime,password,tip,email FROM korisnici';
+ $retval = mysqli_query( $conn ,  $sql);
+ if(! $retval ) {
+ die('Could not get data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+ }
+ while($row = mysqli_fetch_assoc($retval)) {
+	 array_push($ids,"{$row['id']}");
+	 array_push($imena,"{$row['ime']}");
+	 array_push($prezimena,"{$row['prezime']}");
+	 array_push($usernames,"{$row['username']}");
+	 array_push($passwords,"{$row['password']}");
+	 array_push($emails,"{$row['email']}");
+	 array_push($tipovi,"{$row['tip']}");
+	 
+  
+  
+ }
+
+/*
 
 $file = 'korisnici.xml';
     if(!$xml = simplexml_load_file($file))
@@ -45,7 +73,7 @@ $file = 'korisnici.xml';
 
 	
 	
-}
+}*/
 	
 for ($i=0; $i<count($ids); $i++)
 {

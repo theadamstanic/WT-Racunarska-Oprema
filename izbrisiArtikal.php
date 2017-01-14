@@ -1,10 +1,30 @@
 
 <?php
 
+
+	$id = $_REQUEST["q"];
+$dbhost = $_SERVER["HTTP_HOST"];
+$dbuser = 'spirala';
+$dbpass = 'password';
+$conn = ($GLOBALS["___mysqli_ston"] = mysqli_connect($dbhost,  $dbuser,  $dbpass));
+if(! $conn ) {
+die('Could not connect: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+}
+
+ mysqli_select_db($GLOBALS["___mysqli_ston"], 'adamstanicspirala_db');
+ 
+ $sql = 'DELETE FROM artikli WHERE id='.$id;
+ $retval = mysqli_query( $conn ,  $sql);
+ if(! $retval ) {
+ die('Could not get data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+ }
+ 
+ 
+
 //$doc = new DOMDocument(); 
 //$doc->load('artikli.xml');
 
-$file = 'artikli.xml';
+/*$file = 'artikli.xml';
     if(!$xml = simplexml_load_file($file))
         exit('Failed to open '.$file);
 

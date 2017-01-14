@@ -7,12 +7,65 @@
 	$username = $_REQUEST["username"];
 	$tip=$_REQUEST["tip"];
 	
+	
+	$username = htmlspecialchars($username, ENT_QUOTES, "UTF-8");
+	$ime = htmlspecialchars($ime, ENT_QUOTES, "UTF-8");
+	$prezime= htmlspecialchars($prezime, ENT_QUOTES, "UTF-8");
+	$email= htmlspecialchars($email, ENT_QUOTES, "UTF-8");
+	$password= htmlspecialchars($password, ENT_QUOTES, "UTF-8");
+	$tip= htmlspecialchars($tip, ENT_QUOTES, "UTF-8");
+
+	
 	$response="";
 	$pronadjen=false;
-$file = 'korisnici.xml';
+	
+	$dbhost = $_SERVER["HTTP_HOST"];
+$dbuser = 'spirala';
+$dbpass = 'password';
+$conn = ($GLOBALS["___mysqli_ston"] = mysqli_connect($dbhost,  $dbuser,  $dbpass));
+if(! $conn ) {
+die('Could not connect: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+}
+
+ mysqli_select_db($GLOBALS["___mysqli_ston"], 'adamstanicspirala_db');
+
+	$sql = 'SELECT username FROM korisnici';
+ $retval = mysqli_query( $conn ,  $sql);
+ if(! $retval ) {
+ die('Could not get data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+ }
+ while($row = mysqli_fetch_assoc($retval)) 
+{
+	 
+	if("{$row['username']}" == $username) $pronadjen = true;
+}
+
+if(!$pronadjen)
+{
+	$sql =' INSERT INTO korisnici '.
+		'(username,ime,prezime,password,tip,email) '.
+		'VALUES ("'.$username.'",
+		"'.$ime.'",
+		"'.$prezime.'",
+		"'.$password.'",
+		"'.$tip.'",
+
+		"'.$email.'") ' ;
+		
+		//mysql_select_db(''adamstanicspirala_db'');
+	 $retval = mysqli_query( $conn, $sql);
+	 if(! $retval ) {
+	 die('Could not enter data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
+	 }
+}
+	
+	
+/*$file = 'korisnici.xml';
     if(!$xml = simplexml_load_file($file))
         exit('Failed to open '.$file);
 	$brojac=0;
+	
+	
 	
 	
 foreach($xml->children() as $korisnik)
@@ -53,11 +106,19 @@ if($pronadjen==false)
 	$korisnik->addChild("email",$email);
 	
 	$sxe->asXML("korisnici.xml");
-	echo "true";*/
+	echo "true";
 	
+	}*/
+	$pronadjen=!$pronadjen;
+	
+	if($pronadjen)
+	{
+		$response="true";
 	}
+	else
+		$response="zauzet";
+	
 	echo $response;
-	$xml->asXML("korisnici.xml");
 	
 
 ?>

@@ -1,6 +1,7 @@
+
 <?php
 session_start();
-
+$_SESSION["korpa"]=array();
 
 if(isset($_POST["ime_kontakt"]) && isset($_POST["prezime_kontakt"]) && isset($_POST["poruka_kontakt"]) )
 {
@@ -74,6 +75,7 @@ header('Location:'.$_SERVER['PHP_SELF']);
         <script src="ajaxstranice.js"></script>
         
                 <script src="fullscreen.js"></script>
+		<script src="baze.js"></script>
 
          <script>
             document.onkeydown = function(evt)
@@ -242,6 +244,8 @@ header('Location:'.$_SERVER['PHP_SELF']);
 	  </select>
 	  <br>
 	  <input type="button" value="Pretrazi" id="admin_pretrazi" onclick="pretrazi()" >
+	  
+	  <input type="button" value="Pretrazi narudzbe" id="narudzbe_button" onclick="pretrazi_narudzbe()">
 	  <br>
 	  
 	  <!--<input type="radio" id="korisnici" name="izbor" value="korisnici" onclick="switch_radio()">
@@ -259,9 +263,20 @@ header('Location:'.$_SERVER['PHP_SELF']);
 	  
 	  <input type="submit" id="csvbutton" value="Generate CSV" >
 	  	  
+		  
 </form>
+<h1 onclick="pokaziPorukuBaza()">Klik na mene za informacije</h1>
+<h2 id="sakrijBaza">Ovo dugme kreira bazu podatka, dugme ispod je brise. Ostavio sam ova dva dugmeta tu za slucaj da iz nekog razloga
+                asistent ili profesorica ne mognu koristiti moju eksportovanu bazu podataka</h2>
+		<input type="button" id="createDbButton" value="Kreiraj bazu" onclick="kreirajBazu()"> 
+				<input type="button" id="izbrisiDbButton" value="Izbrisi bazu" onclick="izbrisiBazu()">
 
-	  
+                
+		
+		<input type="button" id="prebaciKorisnikeButton" value="Prebaci korisnike iz xml u bazu" onclick="prebaciKorisnike()">
+	  	<input type="button" id="prebaciArtikleButton" value="Prebaci artikle iz xml u bazu" onclick="prebaciArtikle()">
+		<input type="text" id="servisTekst" >
+		<input type="button" id="servisButton" value="Rest servis" onclick="restServis()" >
 			</div>
 	  
 	  
